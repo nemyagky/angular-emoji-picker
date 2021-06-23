@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import { NgxJoypixelsModule } from 'ngx-joypixels';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ChatBlockComponent} from './components/chat-block/chat-block.component';
@@ -26,7 +25,6 @@ import { TextareaComponent } from './components/textarea/textarea.component';
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        NgxJoypixelsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
