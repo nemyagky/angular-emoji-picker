@@ -1,0 +1,83 @@
+.wrapper {
+  padding: 4px;
+
+
+  .emoji-list {
+    height: 230px;
+    overflow: auto;
+    margin-left: 5px;
+    padding-bottom: 10px;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #DAE2EA;
+      width: 6px;
+      border-radius: 3px;
+      margin-left: -10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+  }
+}
+
+
+.group {
+  display: flex;
+  flex-direction: column;
+
+  & .title {
+    height: 20px;
+    padding-top: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 3px 0px rgba(255, 255, 255, 0.8);
+    color: #939393;
+    font-size: 13px;
+    cursor: default;
+    user-select: none;
+  }
+
+  &:first-child .title {
+    margin-top: 5px;
+  }
+
+  & .emojis {
+    display: flex;
+    flex-wrap: wrap;
+
+    & .emoji {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      width: 26px;
+      height: 26px;
+      font-size: 16px;
+      font-family: 'Noto Color Emoji';
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        &:after {
+          content: '';
+          width: 22px;
+          height: 22px;
+          position: absolute;
+          margin-top: 2px;
+          margin-left: 2px;
+          border-radius: 3px;
+          background: #F0F2F5;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.chat-block {
+  display: flex;
+  align-items: flex-end;
+  width: 290px;
+  position: relative;
+  border: 1px solid #C5D0DB;
+  border-radius: 4px;
+
+
+  & .emoji-picker-toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    filter: invert(89%) sepia(1%) saturate(5613%) hue-rotate(190deg) brightness(105%) contrast(72%);
+  }
+}

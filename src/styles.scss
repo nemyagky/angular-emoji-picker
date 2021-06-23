@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'SF-Pro';
+  src: url("/assets/fonts/SF-Pro-Text-Regular.otf");
+}
+
+@font-face {
+  font-family: 'Noto Color Emoji';
+  src: url('/assets/fonts/NotoColorEmoji.ttf')
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+}
+* {
+  font-family: "SF-Pro";
+}

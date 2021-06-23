@@ -1,0 +1,45 @@
+$width: 290px;
+$height: 281px;
+
+.emoji-picker {
+  position: absolute;
+  width: $width;
+  height: $height;
+  border: 1px solid #C5D0DB;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-left: -$width;
+  margin-top: -$height - 52px;
+  background-color: #fff;
+
+  opacity: 0;
+  transition: 0.15s;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 9px;
+    width: 0;
+    height: 0;
+    border-top: solid 7px #C5D0DB;
+    border-left: solid 9px transparent;
+    border-right: solid 9px transparent;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-top: solid 6px #EBEEF2;
+    border-left: solid 8px transparent;
+    border-right: solid 8px transparent;
+  }
+}

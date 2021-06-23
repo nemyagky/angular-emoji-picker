@@ -1,0 +1,10 @@
+<textarea
+        #textArea
+        class="textarea"
+        placeholder="Ваше соообщение"
+        autofocus
+        [(ngModel)]="textAreaValue"
+        (input)="updateTextareaHeight()"
+        (blur)="focusTextarea()"
+>
+</textarea>

@@ -1,0 +1,53 @@
+/** Just random class to demonstrate */
+.app-wrapper {
+  width: 750px;
+  height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  .chat-block {
+    margin-top: 200px;
+  }
+
+  .description {
+    font-size: 15px;
+    margin-left: 70px;
+
+
+    ul {
+      margin-top: 3px;
+
+      li {
+        margin: 4px;
+
+        font-family: 'SF-Pro', 'Noto Color Emoji';
+      }
+    }
+
+    .btnWrapper {
+      margin-left: 80px;
+
+
+      .red {
+        color: red;
+        cursor: pointer;
+        font-size: 18px;
+        position: relative;
+        left: -40px;
+      }
+    }
+
+
+    .italic {
+      font-style: italic;
+      color: #7bc9b8;
+    }
+
+    .last {
+
+    }
+  }
+
+}

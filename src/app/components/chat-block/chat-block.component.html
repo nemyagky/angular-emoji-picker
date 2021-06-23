@@ -1,0 +1,11 @@
+<div class="chat-block">
+    <custom-textarea
+        [smileClick$]="smileClickEvent$"
+    ></custom-textarea>
+    <span
+            toggleEmojiPicker
+            class="emoji-picker-toggler"
+            (smilePressed)="handleSmilePress($event)">
+        <img src="../../../assets/images/smile.svg">
+    </span>
+</div>

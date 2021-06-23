@@ -1,0 +1,30 @@
+.textarea {
+  width: 236px;
+  height: 16px;
+  padding: 10px 45px 9px 9px;
+  overflow-wrap: anywhere;
+  display: flex;
+  align-items: center;
+
+  resize: none;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: 'SF-Pro', 'Noto Color Emoji';
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #DAE2EA;
+    width: 6px;
+    border-radius: 3px;
+    margin-left: -10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}

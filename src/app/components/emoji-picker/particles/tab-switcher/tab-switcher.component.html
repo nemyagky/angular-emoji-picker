@@ -1,0 +1,19 @@
+<div class="tab-switcher">
+
+    <div
+        class="tab"
+        [ngClass]="{active: activeTab === 'default'}"
+        (click)="switchTab('default')"
+    >
+        <img src="../../../assets/images/smile.svg" alt="">
+    </div>
+
+    <div
+         class="tab"
+         [ngClass]="{active: activeTab === 'recently-used'}"
+         (click)="switchTab('recently-used')"
+    >
+        <img src="../../../assets/images/time.svg" alt="">
+    </div>
+
+</div>

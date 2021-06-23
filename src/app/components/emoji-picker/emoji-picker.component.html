@@ -1,0 +1,12 @@
+<div
+     class="emoji-picker"
+     [ngClass]="{active: animationState === 'active'}"
+>
+    <emoji-list
+            [emojiGroups]="emojiGroups"
+            (smilePressed$)="onSmilePress($event)"
+    ></emoji-list>
+    <tab-switcher
+            (onTabSwitch)="updateEmojis($event)"
+    ></tab-switcher>
+</div>
