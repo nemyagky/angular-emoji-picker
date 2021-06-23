@@ -2,14 +2,14 @@
 
     <div class="emoji-list"
          #emojiList
-         (scroll)="changeGroupsToShow()"
+         (scroll)="changeEmojiGroupsOnScroll()"
     >
         <div class="group" *ngFor="let emojiGroup of emojiGroups; let i=index">
             <ng-container *ngIf="i < groupsToShow">
                 <span class="title">{{emojiGroup.title}}</span>
                 <div class="emojis">
                     <span *ngFor="let emoji of emojiGroup.items"
-                          (click)="smilePressed(emoji)"
+                          (click)="handleSmilePress(emoji)"
                           class="emoji"
                           [innerHTML]="emoji">
                     </span>

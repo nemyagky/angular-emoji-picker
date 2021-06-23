@@ -25,7 +25,7 @@ export class EmojiListComponent implements OnInit {
   @ViewChild('emojiList') emojiListRef: ElementRef | undefined;
 
   private groupsToShow: number = 2;
-  private readonly maxGroups: number = 9;
+  private readonly maxGroupsCount: number = 9;
 
   constructor(
       private emojiService: EmojiService
@@ -33,22 +33,25 @@ export class EmojiListComponent implements OnInit {
 
   ngOnInit(): void {
     this.emojiService.tabSwitchEvent$?.subscribe(() => {
+      // Restore scrollbar height to default
       this.groupsToShow = 2;
     })
   }
 
-  public smilePressed(emoji: string) {
+  public handleSmilePress(emoji: string) {
     this.smilePressed$.emit(emoji);
   }
 
-  public changeGroupsToShow(): void {
+  public changeEmojiGroupsOnScroll(): void {
     const scrollTop: number = this.emojiListRef?.nativeElement.scrollTop;
     const elemOffsetHeight: number = this.emojiListRef?.nativeElement.offsetHeight;
     const elemScrollHeight: number = this.emojiListRef?.nativeElement.scrollHeight;
 
     if (elemScrollHeight - elemOffsetHeight - scrollTop < 400) {
-      if (this.groupsToShow + 2 <= this.maxGroups) {
+      if (this.groupsToShow + 2 <= this.maxGroupsCount) {
         this.groupsToShow += 2;
+      } else {
+        this.groupsToShow = this.maxGroupsCount;
       }
     }
   }

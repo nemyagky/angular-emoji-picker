@@ -4,7 +4,7 @@
 >
     <emoji-list
             [emojiGroups]="emojiGroups"
-            (smilePressed$)="onSmilePress($event)"
+            (smilePressed$)="handleSmilePress($event)"
     ></emoji-list>
     <tab-switcher
             (onTabSwitch)="updateEmojis($event)"

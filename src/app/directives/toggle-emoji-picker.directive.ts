@@ -71,7 +71,7 @@ export class ToggleEmojiPickerDirective {
                     this.startCloseTimeout();
                 }
             );
-        emojiPicker.unfocused$.subscribe(() => {
+        emojiPicker.unhovered$.subscribe(() => {
             this.startCloseTimeout();
         })
 
@@ -80,7 +80,7 @@ export class ToggleEmojiPickerDirective {
                     this.clearCloseTimeout();
                 }
             );
-        emojiPicker.focused$.subscribe(() => {
+        emojiPicker.hovered$.subscribe(() => {
             this.clearCloseTimeout();
         })
     }
@@ -101,7 +101,7 @@ export class ToggleEmojiPickerDirective {
         this.emojiPickerComponent?.instance.animationState = 'hide';
         this.changeDetectorRef.detectChanges();
 
-        // Deleting hostView later to let animation execute
+        // To let animation execute
         setTimeout(() => {
             if (this.isEmojiPickerOpen)
                 this.isEmojiPickerOpen = false;
@@ -114,8 +114,8 @@ export class ToggleEmojiPickerDirective {
         const emojiPicker: EmojiPickerComponent | undefined = this.emojiPickerComponent?.instance;
 
         emojiPicker?.smilePressed$.unsubscribe();
-        emojiPicker?.focused$.unsubscribe();
-        emojiPicker?.unfocused$.unsubscribe();
+        emojiPicker?.hovered$.unsubscribe();
+        emojiPicker?.unhovered$.unsubscribe();
         // @ts-ignore
         this.mouseleaveHandler();
         // @ts-ignore

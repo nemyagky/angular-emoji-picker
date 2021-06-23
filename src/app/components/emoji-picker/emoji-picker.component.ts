@@ -10,42 +10,39 @@ import * as emojiGroups from '../../constants/emoji-groups.constant';
 
 export class EmojiPickerComponent implements AfterViewInit {
 
-    // @Output() onMouseleave = new EventEmitter();
-    // @HostListener('mouseleave') onMouseLeave() {
-    //   this.onMouseleave.emit();
-    // }
     @Output() smilePressed$: EventEmitter<string> = new EventEmitter<string>();
 
     public emojiGroups: EmojiGroup[] = emojiGroups.default;
     public animationState: 'hide' | 'active' = 'hide';
 
-    public focused$: EventEmitter<any> = new EventEmitter();
+    public hovered$: EventEmitter<any> = new EventEmitter();
+    public unhovered$: EventEmitter<any> = new EventEmitter();
+
+    @HostListener('mouseleave') onMouseLeave() {
+        this.unhovered$.emit();
+    }
     @HostListener('mouseenter') onMouseEnter() {
-        this.focused$.emit();
+        this.hovered$.emit();
     }
 
-    public unfocused$: EventEmitter<any> = new EventEmitter();
-    @HostListener('mouseleave') onMouseLeave() {
-        this.unfocused$.emit();
-    }
 
 
     constructor(private changeDetectorRef: ChangeDetectorRef) {
     }
 
     ngAfterViewInit() {
+        // To let animation execute
         setTimeout(() => {
             this.animationState = 'active';
             this.changeDetectorRef.detectChanges();
         }, 0);
     }
 
-
     public updateEmojis(emojiGroups: EmojiGroup[]): void {
         this.emojiGroups = emojiGroups;
     }
 
-    public onSmilePress(smile: string): void {
+    public handleSmilePress(smile: string): void {
         this.smilePressed$.emit(smile);
     }
 
