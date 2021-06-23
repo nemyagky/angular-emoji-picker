@@ -54,8 +54,14 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "extractCss": true,
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/emoji-font.css",
+                "bundleName": "emoji-font",
+                "inject": false
+              }
             ],
             "scripts": []
           },
