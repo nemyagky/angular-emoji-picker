@@ -32,7 +32,7 @@ export class TabSwitcherComponent {
 
     private getRecentlyUsedEmojis(): EmojiGroup[] {
         return [{
-            title: 'Недавно использованные',
+            title: 'Recently used',
             items: this.emojiService.recentlyUsedEmojis
         }];
     }

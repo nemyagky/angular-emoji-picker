@@ -25,7 +25,7 @@ export class EmojiListComponent implements OnInit {
   @ViewChild('emojiList') emojiListRef: ElementRef | undefined;
 
   private groupsToShow: number = 2;
-  private readonly maxGroupsCount: number = 9;
+  private readonly maxGroupsCount: number = 7;
 
   constructor(
       private emojiService: EmojiService
@@ -46,6 +46,10 @@ export class EmojiListComponent implements OnInit {
     const scrollTop: number = this.emojiListRef?.nativeElement.scrollTop;
     const elemOffsetHeight: number = this.emojiListRef?.nativeElement.offsetHeight;
     const elemScrollHeight: number = this.emojiListRef?.nativeElement.scrollHeight;
+
+    if (this.maxGroupsCount === this.groupsToShow) {
+      return;
+    }
 
     if (elemScrollHeight - elemOffsetHeight - scrollTop < 400) {
       if (this.groupsToShow + 2 <= this.maxGroupsCount) {
